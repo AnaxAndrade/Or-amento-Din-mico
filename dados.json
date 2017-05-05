@@ -1,0 +1,47 @@
+{
+	"projeto": {
+		"titulo": "Titulo do Projeto",
+		"custoMaximo": 100000
+	},
+	"features": [
+		{
+			"id": 1,
+			"titulo": "Feature #1",
+			"valor": 10000,
+			"descricao": "",
+			"ativo": true,
+			"checked": false,
+			"required": false,
+			"required_if": [],
+			"disabled_if": []
+		},{
+			"id": 2,
+			"titulo": "Blá Blá Blá",
+			"valor": 5000,
+			"descricao": "",
+			"ativo": true,
+			"checked": false,
+			"required": false,
+			"required_if": [],
+			"disabled_if": []
+		},{
+			"id": 3,
+			"titulo": "Outra Escolha",
+			"valor": 13500,
+			"descricao": "",
+			"ativo": true,
+			"checked": false,
+			"required": false,
+			"required_if": [],
+			"disabled_if": []
+		}
+	],
+	"descontos":[
+		{
+			"itens": [0, -1, 1], 
+			"status": true,
+			"valor": 500,
+			"descricao": "Mais detalhes do Desconto"
+		}
+	]
+}

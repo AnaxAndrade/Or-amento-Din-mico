@@ -1,0 +1,27 @@
+{
+	"projeto": {
+		"titulo": "Meu Projeto",
+		"custoMaximo": 100000
+	},
+	"features": [
+		{
+			"id": 1,
+			"titulo": "",
+			"valor": 10,
+			"descricao": "",
+			"ativo": true,
+			"checked": false,
+			"required": false,
+			"required_if": [{"item": 0, "status": false}],
+			"disabled_if": [{"item": 0, "status": true}]
+		}
+	],
+	"descontos":[
+		{
+			"itens": [0, -1, 1], 
+			"status": true,
+			"valor": 500,
+			"descricao": "Mais detalhes do Desconto"
+		}
+	]
+}

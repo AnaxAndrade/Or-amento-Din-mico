@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Orçamento Dinâmico</title>
+	<meta charset="utf8">
+	<link rel="stylesheet" type="text/css" href="libs/uikit/css/uikit.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<script src="libs/angularjs/angular.js"></script>
+	<script src="app.js"></script>
+	<script src="controllers/orcamentoDinamicoCtrl.js"></script>
+
+</head>
+<body ng-app="appOrcamentoDinamico">
+		<div>
+			<nav class="uk-navbar-container uk-margin" uk-navbar>
+			    <div class="uk-navbar-left">
+			        <a class="uk-navbar-item uk-logo" href="#"> <img src="./img/LogoPortalSabi.png" width="120px"> </a>
+			        
+			    </div>
+			    <div class="uk-navbar-center">
+			        <h2>Total</h2>&nbsp;&nbsp; <span class="total">{{model.calcularTotal()}}</span> $</div>
+			        
+			    </div>
+			</nav>
+		</div>
+		<div ng-controller="OrcamentoDinamico"> 
+			<div >
+			<div class="uk-container uk-container-expand">
+				<h2 class="titulo">{{tt}}</h2>
+				<button class="uk-button uk-button-default" ng-click="limparSelecoes()">Valores Default</button>
+				<table class="uk-table uk-table-hover uk-table-striped ">
+					<tr>
+						<th></th>
+						<th></th>
+						<th> <a href="">Selecione as Características</a></th>
+						<th> <a href="">Valor</a> </th>
+						<th> <a href="">Detalhes</a> </th>
+					</tr>
+					<tr ng-repeat="feature in model.features">
+						<td>{{feature.id }}</td>
+						<td> <input class="uk-checkbox" type="checkbox" name="" ng-model="feature.checked"> </td>
+						<td>{{feature.titulo}}</td>
+						<td>{{feature.valor}}</td>
+						<td><a href="" title="{{feature.descricao}}" uk-icon="icon: question" uk-tooltip></a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		</div>
+
+		<script src="libs/jquery/jquery-3.2.1.min.js"></script>
+		<script src="libs/uikit/js/uikit.js"></script>
+		<script src="libs/uikit/js/uikit-icons.min.js"></script>
+
+</body>	
+</html>
