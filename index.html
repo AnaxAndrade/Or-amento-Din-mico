@@ -11,7 +11,7 @@
 	<script src="controllers/orcamentoDinamicoCtrl.js"></script>
 
 </head>
-<body ng-app="appOrcamentoDinamico">
+<body ng-app="appOrcamentoDinamico" ng-controller="OrcamentoDinamico">
 		<div>
 			<nav class="uk-navbar-container uk-margin" uk-navbar>
 			    <div class="uk-navbar-left">
@@ -19,12 +19,12 @@
 			        
 			    </div>
 			    <div class="uk-navbar-center">
-			        <h2>Total</h2>&nbsp;&nbsp; <span class="total">{{model.calcularTotal()}}</span> $</div>
+			        <h2>Total</h2>&nbsp;&nbsp; <span class="total">{{calcTotal()}}</span> $</div>
 			        
 			    </div>
 			</nav>
 		</div>
-		<div ng-controller="OrcamentoDinamico"> 
+		<div> 
 			<div >
 			<div class="uk-container uk-container-expand">
 				<h2 class="titulo">{{tt}}</h2>
@@ -39,7 +39,8 @@
 					</tr>
 					<tr ng-repeat="feature in model.features">
 						<td>{{feature.id }}</td>
-						<td> <input class="uk-checkbox" type="checkbox" name="" ng-model="feature.checked"> </td>
+						<td> <input class="uk-checkbox" type="checkbox" name="" ng-model="feature.checked" ng-change="normalize($index, feature.id)"> <span uk-icon="icon: lock" style="color: #f00" ng-if="feature.required"></span>
+						 </td>
 						<td>{{feature.titulo}}</td>
 						<td>{{feature.valor}}</td>
 						<td><a href="" title="{{feature.descricao}}" uk-icon="icon: question" uk-tooltip></a></td>
